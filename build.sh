@@ -3,8 +3,7 @@
 # 先执行 prepare-packages.sh 此脚本用于拷贝所有自定义ipk到packages目录
 sh prepare-packages.sh
 # 以下是仓库内的包名 你可以在openwrt官网仓库查询插件名称
-# https://downloads.openwrt.org/releases/24.10.2/packages/x86_64/luci/
-# https://mirrors.aliyun.com/openwrt/releases/24.10.2/packages/x86_64/luci/
+https://mirrors.aliyun.com/openwrt/releases/24.10.2/packages/aarch64_cortex-a53/luci/
 BASE_PACKAGES=""
 BASE_PACKAGES="$BASE_PACKAGES curl"
 BASE_PACKAGES="$BASE_PACKAGES -dnsmasq"
@@ -45,7 +44,7 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-argon-config-zh-cn"
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-argon-config"
 
 # 第三方插件 istore 应用商店
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-store"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-store"
 # 第三方插件 首页和网络向导
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-quickstart"
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-quickstart-zh-cn"
@@ -116,5 +115,5 @@ fi
 # 例如files/mnt对应覆盖openwrt系统/mnt目录中的文件 
 OUTPUT_DIR=$(pwd)/output
 mkdir -p $OUTPUT_DIR
-make image PROFILE=generic PACKAGES="$PACKAGES"  FILES=files ROOTFS_PARTSIZE=1024 BIN_DIR=$OUTPUT_DIR
+make image PROFILE=xunlong_orangepi-zero3 PACKAGES="$PACKAGES"  FILES=files ROOTFS_PARTSIZE=1024 BIN_DIR=$OUTPUT_DIR
 ls -lah $OUTPUT_DIR
