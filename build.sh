@@ -19,14 +19,14 @@ BASE_PACKAGES="$BASE_PACKAGES luci-compat"
 BASE_PACKAGES="$BASE_PACKAGES luci-i18n-firewall-zh-cn"
 BASE_PACKAGES="$BASE_PACKAGES luci-i18n-base-zh-cn"
 # 如果勾选了docker 务必保证软件包大小ROOTFS_PARTSIZE至少大于512 目前1024
-BASE_PACKAGES="$BASE_PACKAGES luci-i18n-dockerman-zh-cn"
+# BASE_PACKAGES="$BASE_PACKAGES luci-i18n-dockerman-zh-cn"
 # 文件管理器
 BASE_PACKAGES="$BASE_PACKAGES luci-i18n-filemanager-zh-cn"
 # openlist用来平替alist 目前阿里云镜像仓库也有了
 #BASE_PACKAGES="$BASE_PACKAGES luci-i18n-openlist-zh-cn"
 
 #打印机相关
-BASE_PACKAGES="$BASE_PACKAGES luci-i18n-p910nd-zh-cn"
+# BASE_PACKAGES="$BASE_PACKAGES luci-i18n-p910nd-zh-cn"
 #BASE_PACKAGES="$BASE_PACKAGES luci-i18n-openvpn-zh-cn"
 
 
@@ -40,9 +40,9 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-lua-runtime"
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-filetransfer"
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-filetransfer-zh-cn"
 # 第三方插件 argon主题 luci-theme-argon 紫色主题 3个ipk
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-theme-argon"
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-argon-config-zh-cn"
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-argon-config"
+# CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-theme-argon"
+# CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-argon-config-zh-cn"
+# CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-argon-config"
 
 # 第三方插件 istore 应用商店
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-store"
@@ -53,7 +53,7 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-argon-config"
 # 第三方插件 luci-app-adguardhome 去广告
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-adguardhome"
 # 第三方插件 openclash 内核放在files/etc/openclash/core/clash_meta 若不勾选则不集成
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-openclash"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-openclash"
 # 第三方插件 luci-app-passwall 包含内部组件
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-passwall"
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-passwall-zh-cn"
@@ -64,10 +64,10 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-argon-config"
 # 第三方插件 luci-app-ssr-plus 尤其注意要包含 shadowsocks-libev-ss-server
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-ssr-plus"
 # 第三方插件 luci-app-homeproxy
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-homeproxy-zh-cn"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-homeproxy-zh-cn"
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-homeproxy"
-# 第三方插件 luci-app-nikki
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-nikki-zh-cn"
+#第三方插件 luci-app-nikki
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-nikki-zh-cn"
 
 # ✅ 校验 CUSTOM_PACKAGES 中的包是否都存在于 packages_names.txt
 package_file="packages_names.txt"
